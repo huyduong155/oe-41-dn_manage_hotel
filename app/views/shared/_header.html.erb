@@ -9,20 +9,26 @@
             <div class="main-menu  d-none d-lg-block">
               <nav>
                 <ul id="navigation">
-                  <li><a class="active" href="index.html">home</a></li>
                   <li>
-                    <%= link_to "Rooms", static_pages_rooms_path %>
+                    <%= link_to t("home"), root_path %>
                   </li>
-                  <li><a href="about.html">About</a></li>
                   <li>
-                    <%= link_to "Login", session_login_path %>
+                    <%= link_to t("rooms"), static_pages_rooms_path %>
                   </li>
-                  <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                  <li>
+                    <%= link_to t("about"), root_path %>
+                  </li>
+                  <li>
+                    <%= link_to t("contact"), root_path %>
+                  </li>
+                  <li>
+                    <a href="#"><%= t("language")%>
+                      <i class="ti-angle-down"></i></a>
                     <ul class="submenu">
-                      <li><a href="elements.html">elements</a></li>
+                      <li><%= link_to t("eng"), locale:"en" %></li>
+                      <li><%= link_to t("vie"), locale:"vi" %></li>
                     </ul>
                   </li>
-                  <li><a href="contact.html">Contact</a></li>
                 </ul>
               </nav>
             </div>
@@ -34,7 +40,7 @@
               </a>
             </div>
           </div>
-          <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+          <div class="col-xl-5 col-lg-4 d-none d-lg-block" style="padding-right: 80px">
             <div class="book_room">
               <div class="socail_links">
                 <ul>
@@ -53,10 +59,13 @@
                       <i class="fa fa-instagram"></i>
                     </a>
                   </li>
+                  <li>
+                    <%= link_to t("login"),session_login_path,class: "login-regis" %>
+                  </li>
+                   <li>
+                    <%= link_to t("register"), signup_path,class: "login-regis" %>
+                  </li>
                 </ul>
-              </div>
-              <div class="book_btn d-none d-lg-block">
-                <a class="popup-with-form" href="#test-form">Book A Room</a>
               </div>
             </div>
           </div>

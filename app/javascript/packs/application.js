@@ -1,3 +1,6 @@
+//= require jquery
+//= require jquery_ujs
+//= require toastr
 require("bootstrap")
 require("jquery")
 require("packs/main")
@@ -23,3 +26,27 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+// application.js
+toastr.options = {
+  // thay đổi nội dung hiển thị trên nút close, vd như "Đóng"
+  "closeButton": false,
+
+  // thay đổi vị trí của notification
+  "positionClass": "toast-top-right",
+
+  // Các thông báo có hiển thị cùng 1 lúc hay khi cái sau xuất hiện sẽ ẩn cái trước
+  "preventDuplicates": false,
+
+  // action khi click vào thông báo
+  "onclick": null,
+
+  // thời gian, hiệu ứng hiển thị và ẩn
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
