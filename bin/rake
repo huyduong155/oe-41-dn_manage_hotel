@@ -1,5 +1,13 @@
 #!/usr/bin/env ruby
+<<<<<<< HEAD
 load File.expand_path("spring", __dir__)
 require_relative "../config/boot"
 require "rake"
+=======
+# frozen_string_literal: true
+
+load File.expand_path('spring', __dir__)
+require_relative '../config/boot'
+require 'rake'
+>>>>>>> static-page-desgin
 Rake.application.run
