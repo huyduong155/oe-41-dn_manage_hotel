@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 require "test_helper"
+=======
+# frozen_string_literal: true
+
+require 'test_helper'
+>>>>>>> static-page-desgin
 
 class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
   # test "connects with cookies" do
