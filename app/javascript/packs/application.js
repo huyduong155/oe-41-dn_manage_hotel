@@ -1,7 +1,6 @@
 require("bootstrap")
 require("jquery")
 require("packs/main")
-
 document.addEventListener("turbolinks:load", function() {
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
