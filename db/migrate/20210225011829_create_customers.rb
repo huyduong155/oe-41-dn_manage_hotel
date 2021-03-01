@@ -8,6 +8,7 @@ class CreateCustomers < ActiveRecord::Migration[6.1]
       t.date :birthday
       t.string :address
       t.integer :deleted, default: 0
+
       t.timestamps
     end
   end

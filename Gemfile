@@ -10,11 +10,11 @@ gem "jquery-rails"
 gem "mysql2", "~> 0.5"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.3"
+gem "rails-i18n"
 gem "sass-rails", ">= 6"
 gem "toastr-rails"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
-gem "rails-i18n"
 
 group :development, :test do
   gem "byebug", platforms: %i(mri mingw x64_mingw)
