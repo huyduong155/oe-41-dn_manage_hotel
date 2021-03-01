@@ -8,8 +8,8 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :address
       t.string :id_card
       t.date :birthday
-      t.integer :deleted
-      t.integer :role
+      t.integer :deleted, default: 0
+      t.integer :role, default: 0
       t.string :password_digest
       t.string :remember_digest
 

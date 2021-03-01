@@ -6,7 +6,7 @@ class CreateRooms < ActiveRecord::Migration[6.1]
       t.string :name
       t.float :price
       t.string :image
-      t.integer :deleted
+      t.integer :deleted, default: 0
       t.integer :status
       t.string :description
       t.references :room_type, null: false, foreign_key: true
