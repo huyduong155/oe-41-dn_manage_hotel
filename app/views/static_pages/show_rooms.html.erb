@@ -1,0 +1,120 @@
+<% provide :title, t("rooms") %>
+<!-- offers_area_start -->
+<div class="nav-room">
+</div>
+<div class="offers_area padding_top">
+  <div class="container">
+    <div class="row" class="search-bar">
+      <div class="col-xl-12 col-md-12" style="">
+        <%= form_tag (static_pages_rooms_path), class: "form-search" ,method: :get do  %>
+          <label>
+            <%= t("date_start_date_end") %>
+          </label>
+          <%= date_field_tag :date_start, params[:date_start], class: "text-search" %>
+          <%= date_field_tag :date_end, params[:date_end], class: "text-search2" %>
+          <%= submit_tag "Search", class: "btn-search btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <div class="row">
+      <% @rooms.each do |r| %>
+        <div class="col-xl-3 col-md-3">
+          <div class="single_offers">
+            <div class="about_thumb">
+              <%= image_tag r.image, alt: "", class: "img-room-home" %>
+            </div>
+            <h3>Up to 35% savings on Club <br>rooms and Suites</h3>
+            <ul>
+              <li><%= r.name %></li>
+              <li>Luxaries condition</li>
+              <li>3 Adults & 2 Children size</li>
+              <li>Sea view side</li>
+            </ul>
+            <a href="#" class="book_now">book now</a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <% if @rooms.empty? %>
+    <div class="row" style="display: flex;justify-content: center;,align-items: center; margin-top: 6rem">
+      <div class="single_offers">
+        <div class="about_thumb">
+          <h3>
+            <%= t("now_not_have_room_ready!_Please search another day") %>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+    <%= will_paginate @rooms %>
+</div>
+</div>
+<!-- offers_area_end -->
+<!-- features_room_startt -->
+<div class="features_room">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="section_title text-center mb-100">
+          <span>Featured Rooms</span>
+          <h3>Choose a Better Room</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rooms_here">
+    <div class="single_rooms">
+      <div class="room_thumb">
+        <img src="/img/rooms/1.png" alt="">
+        <div class="room_heading d-flex justify-content-between align-items-center">
+          <div class="room_heading_inner">
+            <span>From $250/night</span>
+            <h3>Superior Room</h3>
+          </div>
+          <a href="#" class="line-button">book now</a>
+        </div>
+      </div>
+    </div>
+    <div class="single_rooms">
+      <div class="room_thumb">
+        <img src="/img/rooms/2.png" alt="">
+        <div class="room_heading d-flex justify-content-between align-items-center">
+          <div class="room_heading_inner">
+            <span>From $250/night</span>
+            <h3>Deluxe Room</h3>
+          </div>
+          <a href="#" class="line-button">book now</a>
+        </div>
+      </div>
+    </div>
+    <div class="single_rooms">
+      <div class="room_thumb">
+        <img src="/img/rooms/3.png" alt="">
+        <div class="room_heading d-flex justify-content-between align-items-center">
+          <div class="room_heading_inner">
+            <span>From $250/night</span>
+            <h3>Signature Room</h3>
+          </div>
+          <a href="#" class="line-button">book now</a>
+        </div>
+      </div>
+    </div>
+    <div class="single_rooms">
+      <div class="room_thumb">
+        <img src="/img/rooms/4.png" alt="">
+        <div class="room_heading d-flex justify-content-between align-items-center">
+          <div class="room_heading_inner">
+            <span>From $250/night</span>
+            <h3>Couple Room</h3>
+          </div>
+          <a href="#" class="line-button">book now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- features_room_end -->
+

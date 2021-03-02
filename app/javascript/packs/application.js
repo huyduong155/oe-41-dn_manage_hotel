@@ -1,8 +1,13 @@
-//= require jquery
-//= require jquery_ujs
-//= require toastr
-require("bootstrap")
-require("jquery")
+import "../stylesheets/application.scss"
+import "popper.js"
+import "jquery"
+require("packs/jquery.ajaxchimp.min")
+require("packs/jquery.counterup")
+require("packs/jquery.form")
+require("packs/jquery.magnifig-popup.min")
+require("packs/jquery.slicknav.min")
+require("packs/jquery.validate.min")
+require("packs/jquery.scrollUp.min")
 require("packs/main")
 document.addEventListener("turbolinks:load", function() {
     $(function () {

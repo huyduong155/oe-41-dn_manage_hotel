@@ -1,0 +1,67 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.img-room-home{
+  height: 180px
+}
+.form-search{
+  float: right;
+}
+
+.form-input{
+  border-color: #495057;
+  opacity: 0.6;
+
+}
+.form-input:focus{
+  outline: none;
+}
+
+.btn-search{
+  font-size: 13px!important;
+  margin: -4px 0 0 1px;
+  border-radius: 3rem!important;
+  border-color: #009DFF;
+  text-decoration-color: #009DFF;
+}
+
+.search-text {
+  font-size: 25px;
+  opacity: 1
+}
+
+.nav-room{
+  width: 100%;
+  height: 130px;
+  background-color: #000000;
+}
+
+#search {
+  font-size: 18px!important;
+}
+
+.text-search:focus{
+  outline: none;
+}
+
+.text-search2:focus{
+  outline: none;
+}
+
+.text-search{
+  border: 1px solid black;
+  padding-left: 30px;
+  border-radius: 3rem 0 0 3rem;
+  border-right-style: none;
+}
+
+.text-search2{
+  border: 1px solid black;
+  margin-left: -5px;
+  padding-left: 30px;
+  border-radius: 0 3rem 3rem 0;
+  border-left-style: none;
+}
+
+
+

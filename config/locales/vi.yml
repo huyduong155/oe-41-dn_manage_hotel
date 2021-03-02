@@ -27,3 +27,5 @@ vi:
   dont_have_an_account: "Tạo tài khoản"
   forgot_your_password: "Lấy lại mật khẩu"
   sign_up: "Đăng kí"
+  your_date_input_not_true: "Ngày bạn nhập vào phải lớn hơn ngày hiện tại"
+  not_valid_email_or_password: "Email hoặc mật khẩu không đúng"
