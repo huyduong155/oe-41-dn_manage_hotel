@@ -45,15 +45,19 @@ class Booking < ApplicationRecord
     where("bookings.start_date >= ? and bookings.end_date <= ?", sdate, edate)
   end)
 
+  scope :room_ids_in_booking, (lambda do
+    select(:room_id)
+    .where(deleted: 0)
+    .order(id: :desc)
+  end)
+
   def check_end_date
     return if end_date >= start_date
 
     errors.add :end_date, I18n.t("validation_end_date")
   end
 
-  scope :room_ids_in_booking, (lambda do
-    select("room_id")
-    .where("deleted=0")
-    .order(id: :desc)
-  end)
+  def update_delete_booked
+    update_column :deleted, 1
+  end
 end

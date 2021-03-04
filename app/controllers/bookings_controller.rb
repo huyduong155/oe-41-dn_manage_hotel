@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
   before_action :load_room, only: %i(new create)
   before_action :load_date, only: :new
   before_action :load_page, only: :index
+  before_action :load_booked, only: :cancel_booked
 
   def new
     @date_end = params[:date_end]
@@ -33,6 +34,16 @@ class BookingsController < ApplicationController
     @number = (params[:page].to_i - 1) * Settings.per_page
   end
 
+  def cancel_booked
+    if @booked.update_delete_booked
+      flash[:success] = t("cancelled")
+      redirect_to user_booked_path
+    else
+      flash.now[:danger] = t "error_cancel"
+      render :new
+    end
+  end
+
   private
 
   def load_room
@@ -45,6 +56,13 @@ class BookingsController < ApplicationController
 
   def load_page
     params[:page] ||= "1"
+  end
+
+  def load_booked
+    return if @booked = Booking.find_by(id: params[:id])
+
+    flash[:error] = t("error_booked")
+    redirect_to user_booked_path
   end
 
   def booking_params

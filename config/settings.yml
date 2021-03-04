@@ -1,2 +1,4 @@
 paging_limit: 8
 per_page: 5
+role_admin: "admin"
+role_staff: "staff"

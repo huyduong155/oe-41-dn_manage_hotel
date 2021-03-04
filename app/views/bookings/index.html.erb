@@ -31,7 +31,10 @@
           <td><%= b.status %></td>
           <td>
             <%= link_to "", user_booked_path, class: "fa fa-pencil edit", title: t("edit")%> |
-            <%= link_to "", user_booked_path, class: "fa fa-window-close delete", title: t("cancel")%>
+            <%= link_to "", booked_path(id: b.id),
+                           class: "fa fa-window-close delete",
+                           title: t("cancel"), method: :delete,
+                           data: {confirm: t("sure_cancel")} %>
           </td>
         </tr>
         <% end %>

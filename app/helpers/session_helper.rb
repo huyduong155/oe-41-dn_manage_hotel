@@ -23,6 +23,10 @@ module SessionHelper
     end
   end
 
+  def admin?
+    return true if current_user.role == Settings.role_admin
+  end
+
   def log_out
     session.delete(:user_id)
     @current_user = nil

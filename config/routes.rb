@@ -7,13 +7,13 @@ Rails.application.routes.draw do
     post "/login", to: "session#create"
     get "/logout", to: "session#destroy"
     get "/static_pages/rooms", to: "static_pages#show_rooms"
-    resources :rooms do
-        resources :bookings
-    end
     get "static_pages/about"
     get "static_pages/gallery"
     get "/user/booked", to: "bookings#index"
-    post "/user/booked", to: "bookings#cancel_booked"
+    delete "/booked", to: "bookings#cancel_booked"
+    resources :rooms do
+        resources :bookings
+    end
     namespace :admin do
        root to: "rooms#show"
        get "/rooms/new", to: "rooms#new"

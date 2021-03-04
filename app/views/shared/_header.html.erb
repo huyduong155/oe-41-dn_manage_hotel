@@ -59,7 +59,7 @@
                     </a>
                   </li>
                   <% if logged_in? %>
-                   <li>
+                  <li>
                     <div class="main-menu  d-none d-lg-block">
                       <nav>
                         <ul id="navigation">
@@ -67,9 +67,14 @@
                             <a href="#" class="login-regis"><%=current_user.name%>
                               <i class="ti-angle-down"></i></a>
                             <ul class="submenu">
-                              <li><%= link_to t("profile"), root_path %></li>
-                              <li><%= link_to t("booked"), root_path %></li>
+                              <li><%= link_to t("profile"), locale:"en" %></li>
+                              <li><%= link_to t("booked"), user_booked_path %></li>
                               <li><%= link_to t("logout"), logout_path %></li>
+                              <% if admin? %>
+                                <li>
+                                  <%= link_to t("admin_page"), admin_root_path%>
+                                </li>
+                              <% end %>
                             </ul>
                           </li>
                         </ul>
