@@ -34,4 +34,11 @@ en:
   created_success: "Create success"
   created_failed: "Create failed"
   booking_date_exist: "Booking date exist"
-
+  booked: "Booked"
+  user_name: "User name"
+  room: "Room"
+  price: "Price"
+  cus_name: "Customer name"
+  action: "Action"
+  edit: "edit"
+  cancel: "cancel"

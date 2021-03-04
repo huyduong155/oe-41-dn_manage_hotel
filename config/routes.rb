@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     end
     get "static_pages/about"
     get "static_pages/gallery"
+    get "/user/booked", to: "bookings#index"
+    post "/user/booked", to: "bookings#cancel_booked"
   end
 end

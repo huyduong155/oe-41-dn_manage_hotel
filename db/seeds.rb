@@ -20,6 +20,3 @@ end
 3.times do |n|
 Room.create(name: "Room #{n + 7}", price: 500 + n * 5, image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png", room_type_id: n+ 1)
 end
-
-
-

@@ -3,10 +3,20 @@ class Booking < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validate :check_end_date
+  delegate :name, to: :user, prefix: :user
+  delegate :name, to: :customer, prefix: :customer
+  delegate :name, :price, to: :room, prefix: :room
   belongs_to :user
   belongs_to :customer
   belongs_to :room
   accepts_nested_attributes_for :customer
+
+  scope :user_bookeds, (lambda do |user_id|
+    where(bookings: {user_id: user_id}, deleted: 0).includes_order
+  end)
+
+  scope :includes_order, ->{includes(:user, :customer, :room).order(id: :desc)}
+
   scope :booked, (lambda do |start_date, end_date|
     select("room_id")
     .where("deleted=0")

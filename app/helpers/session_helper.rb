@@ -15,4 +15,8 @@ module SessionHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def format_date date
+    date.strftime("%d/%m/%Y")
+  end
 end

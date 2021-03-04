@@ -1954,8 +1954,8 @@ pre code {
 
 .table .thead-dark th {
     color: #fff;
-    background-color: #212529;
-    border-color: #32383e
+    background-color: #194a69;
+    border-color: #194a69
 }
 
 .table .thead-light th {
@@ -7530,6 +7530,16 @@ button.bg-dark:hover {
 
 .float-right {
     float: right!important
+}
+
+.edit{
+    color: #081fbf;
+    margin-right: 10px;
+}
+
+.delete{
+    color: red;
+    margin-left: 10px
 }
 
 .float-none {
