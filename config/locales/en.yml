@@ -22,3 +22,5 @@ en:
   get_direction: "Get Direction"
   navigation: "Navigation"
   newsletter: "Newsletter"
+  your_date_input_not_true: "Your date input must be than current date !"
+  not_valid_email_or_password: "Email or password not valid"
