@@ -47,3 +47,23 @@ vi:
   action: "Tác vụ"
   edit: "chỉnh sửa"
   cancel: "huỷ"
+  activerecord:
+    attributes:
+      user:
+        role:
+          customer: "Khách hàng"
+          admin: "Quản trị viên "
+          staff: "Nhân viên"
+  role: "Quyền"
+  status: "Trạng thái"
+  action: "Hành động"
+  delete: "Xóa"
+  active: "hoạt động"
+  admin: "Quản trị viên"
+  staff: "Nhân viên"
+  customer: "Khách hàng"
+  users_management: "Quản lý nhân viên"
+  search_for: "Tìm kiếm:"
+  search: "Tìm kiếm"
+  dashboard: "Bảng điều khiển"
+  room_list: "Danh sách phòng"
