@@ -21,26 +21,26 @@
   </thead>
   <tbody>
     <% @rooms.each do |r| %>
-    <tr>
-      <td>
-        <%= r.id %>
-      </td>
-      <td>
-        <%= image_tag r.image, class: "image-list" %>
-      </td>
-      <td>
-        <%= r.name %>
-      </td>
-      <td>
-        <%= r.price %>
-      </td>
-      <td>
-        <%= r.description %>
-      </td>
-      <td class="text-primary">
-       Aciton
-     </td>
-   </tr>
+      <tr>
+        <td>
+          <%= r.id %>
+        </td>
+        <td>
+          <%= image_tag r.image, class: "image-list" %>
+        </td>
+        <td>
+          <%= r.name %>
+        </td>
+        <td>
+          <%= r.price %>
+        </td>
+        <td>
+          <%= r.description %>
+        </td>
+        <td class="text-primary">
+         Aciton
+       </td>
+     </tr>
    <% end %>
  </tbody>
 </table>

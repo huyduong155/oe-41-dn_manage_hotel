@@ -67,3 +67,5 @@ vi:
   search: "Tìm kiếm"
   dashboard: "Bảng điều khiển"
   room_list: "Danh sách phòng"
+  sowething_was_wrong_in_form: "Thông tin bạn nhập chưa hợp lệ"
+  create_new_room: "Thêm phòng mới"

@@ -1,0 +1,23 @@
+<%=form_for :room do |f|%>
+  <div class="form-group">
+    <label for="exampleInputEmail1"><%= t "room_name" %> </label>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1"><%= t "room_image" %></label>
+    <%= f.text_field :image, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1"><%= t "room_price" %></label>
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1"><%= t "room_description" %> </label>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1"><%= t "room_type" %></label>
+   <%= f.collection_select :room_type_id, @room_types, :id, :name, prompt: true, class: "form-control select-box"%>
+  </div>
+  <%= f.submit t"create_new_room", class: "btn btn-primary" %>
+<% end %>
