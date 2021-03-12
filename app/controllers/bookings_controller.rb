@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class BookingsController < ApplicationController
-  before_action :logged_in_user, only: %i(new create)
+  before_action :logged_in_user, only: %i(new create index)
   before_action :load_room, only: %i(new create)
   before_action :load_date, only: :new
+  before_action :load_page, only: :index
 
   def new
     @date_end = params[:date_end]
@@ -25,6 +26,13 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @bookeds = @current_user.bookings.user_bookeds(session[:user_id])
+                            .paginate(page: params[:page])
+                            .per_page(Settings.per_page)
+    @number = (params[:page].to_i - 1) * Settings.per_page
+  end
+
   private
 
   def load_room
@@ -33,6 +41,10 @@ class BookingsController < ApplicationController
 
     flash[:danger] = t "room_not_found"
     redirect_to static_pages_rooms_path
+  end
+
+  def load_page
+    params[:page] ||= "1"
   end
 
   def booking_params

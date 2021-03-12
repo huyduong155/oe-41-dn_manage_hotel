@@ -1,0 +1,42 @@
+<% provide :title, t("booked") %>
+<div class="nav-booking"></div>
+<div class="offers_area padding_top">
+  <div class ="container" style="height: 50%">
+    <div style="display: flex;margin-bottom: 25px">
+      <i style="margin-right: 10px;margin-top: 13px;" class="fa fa-hand-o-right "></i>
+      <h1><%= t("booked")%></h1>
+    </div>
+    <table class="table" style="box-shadow: 2px 2px 2px 2px">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col"><%= t("room")%></th>
+          <th scope="col"><%= t("sdate")%></th>
+          <th scope="col"><%= t("edate")%></th>
+          <th scope="col"><%= t("price")%></th>
+          <th scope="col"><%= t("cus_name")%></th>
+          <th scope="col"><%= t("status")%></th>
+          <th scope="col"><%= t("action")%></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bookeds.each_with_index do |b,index|%>
+        <tr>
+          <th scope="row"><%= index + 1 + @number %></th>
+          <td><%= b.room_name %></td>
+          <td><%= format_date(b.start_date) %></td>
+          <td><%= format_date(b.end_date) %></td>
+          <td><%= number_to_currency(b.room_price) %></td>
+          <td><%= b.customer_name %></td>
+          <td><%= b.status %></td>
+          <td>
+            <%= link_to "", user_booked_path, class: "fa fa-pencil edit", title: t("edit")%> |
+            <%= link_to "", user_booked_path, class: "fa fa-window-close delete", title: t("cancel")%>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @bookeds %>
+  </div>
+</div>
