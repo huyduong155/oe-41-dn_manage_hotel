@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     params[:user] = current_user
   end
 
+  def profile
+    @user = current_user
+  end
+
   private
 
   def user_params

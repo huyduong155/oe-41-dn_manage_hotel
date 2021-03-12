@@ -27,3 +27,6 @@
 .login-btn{
    background-color: yellow!important
 }
+.body{
+  overflow-x: hidden
+}

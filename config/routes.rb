@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     post "/user/booked", to: "bookings#cancel_booked"
     namespace :admin do
        root to: "rooms#show"
+       get "/rooms/new", to: "rooms#new"
+       post "/rooms/new", to: "rooms#create"
     end
   end
 end
