@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Booking < ApplicationRecord
   enum status: {unpay: 0, pay: 1}
   validates :start_date, presence: true
@@ -48,4 +50,10 @@ class Booking < ApplicationRecord
 
     errors.add :end_date, I18n.t("validation_end_date")
   end
+
+  scope :room_ids_in_booking, (lambda do
+    select("room_id")
+    .where("deleted=0")
+    .order(id: :desc)
+  end)
 end
