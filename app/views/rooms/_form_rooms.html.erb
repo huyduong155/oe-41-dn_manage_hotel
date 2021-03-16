@@ -1,0 +1,33 @@
+<% @rooms.each do |r| %>
+  <div class="col-lg-4">
+    <div class="single-destinations">
+      <div class="thumb">
+        <%= image_tag r.image || "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png", alt: "", class: "img-room-home" %>
+      </div>
+      <div class="details">
+        <h4 class="d-flex justify-content-between">
+          <span><%= r.name %></span>
+          <div class="star">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </h4>
+        <p>
+          Price   |   <%= number_to_currency(r.price) %>
+        </p>
+        <ul class="package-list">
+          <li class="d-flex justify-content-between align-items-center">
+            <li><%= r.description %></li>
+          </li>
+          <li class="d-flex justify-content-between align-items-center">
+            <%= link_to "book now", rooms_path, class: "price-btn"%>
+            <!-- <a href="#" class="price-btn">$250</a> -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>

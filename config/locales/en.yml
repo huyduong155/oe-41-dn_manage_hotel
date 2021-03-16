@@ -1,2 +1,7 @@
 en:
-
+  home: "Home"
+  rooms: "Rooms"
+  find_room: "Find room"
+  date_start: "Arrival date"
+  end_start: "Departure date"
+  search: "Search"
